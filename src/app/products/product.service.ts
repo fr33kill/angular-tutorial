@@ -19,7 +19,7 @@ export class ProductService {
     getProducts(): Observable <IProduct[]> {
         return this.http.get<IProduct[]>(this.productUrl).pipe(
             tap(data => console.log('All: ' + JSON.stringify(data))),
-            catchError(this.handleError);
+            catchError(this.handleError)
         );
     }
 
@@ -32,6 +32,6 @@ export class ProductService {
         }
         console.error(errorMessage);
         return throwError(errorMessage);
-        
+
     }
 }
